@@ -59,19 +59,24 @@ file is produced for each step of the auditing under files/kml. Finally, a
 json file with all the steps of the RUDP/DUDP attack is also produced for
 each attack that has been succesfully carried out.
 
-An example of how to invoke the framework is given in example_auditor.py. In
-this example, we have implemented a class Tester which inherits from the Auditor
-class and implements the auditor_get_distance and auditor_set_location
-functions.
-
-The swarm class is not included yet as the respective service is not yet
-patched. Users can define their own exception handlers as well as their own
+Users can define their own exception handlers as well as their own
 proximity oracles to be used with the rest of this API. See the API functions
 for more info on each class.
 
 Once the auditor class is properly set up for your service, you simply invoke
 it via
 
-    python your_auditor_class.py
+                    python your_auditor_class.py
 
-(example_auditor.py will fail as swarm.py is missing)
+An example of how to invoke the framework is given in example_auditor.py. In
+this example, we have implemented a class Tester which inherits from the Auditor
+class and implements auditor_get_distance and auditor_set_location functions.
+
+Notice
+======
+    !!! The example_auditor.py file as provided is not a working example !!!
+
+Disclosing reverse engineered protocols and API calls of various services such
+as Facebook and Swarm violates the Terms and Conditions of those services. Such
+services are still vulnerable to our attacks therefore the respective API
+calls are not provided.
