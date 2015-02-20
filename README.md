@@ -1,26 +1,27 @@
-ServiceAuditor
-==============
+LBSProximityAuditor
+===================
 
-As Location Based Services are becoming more and more widespread, new
+As location-based services are becoming more and more popular, new
 applications with location proximity functionality are expected to emerge.
-Evaluating the privacy guarantees of a large, diverse and constantly evolving
-set of applications is not an easy task as a newly-introduced feature might
-break the overall privacy of the application. Unfortunately, although many tools
-exist to detect bugs in traditional software, we still lack concrete mechanisms
-evaluating the privacy properties of applications.
+Furthermore, misconceptions about the actual privacy offered by various
+proximity models, has led services and major media into cultivating a
+false sense of security which has exposed users of these services to
+life-threatening risks. Evaluating the privacy guarantees of a large,
+diverse, and constantly evolving set of applications and services is
+not an easy task. As such we are releasing LBSProximityAuditor.
 
-ServiceAuditor is an auditing framework for Location Based Services designed
+LBSProximityAuditor is an auditing framework for Location Based Services
 designed to facilitate researchers, developers, and privacy-sensitive
 individuals, in verifying the privacy offered by proximity applications.
 
 This is a series of tests for the automatic evaluation of applications,
 regarding their query speed limiting, the verification of API parameters, and
-their effectiveness in protecting users against the attacks presented in this
-paper.  It also provides a set of libraries that can be used to facilitate
+their effectiveness in protecting users against our precise user discovery attacks.
+It also provides a set of libraries that can be used to facilitate
 common operations on geographical data, both on natural and projected
 coordinates.  Since we cannot predict what the specific requirements of each
 application might be, we expect auditors to implement the parts that are
-application-specific. In particular, our framework requires that the auditor has
+application-specific. In particular, our framework requires the auditor to
 implemented the following two API calls:
 
 * auditor_get_distance(user_a, user_b), which returns the distance between two
@@ -29,10 +30,10 @@ implemented the following two API calls:
     a specific set of coordinates.
 
 Once the auditor implements the above calls, both the limit tests and the
-attacks work out of the box. In cases where the service is not a straightforward
-does not use standard proximity oracles (e.x. ring-based or disk-based)
+attacks work "off-the-shelf". In cases where the service does not use
+standard proximity oracles (i.e., exact distance, ring-based or disk-based)
 auditors can specify their own proximity oracle; subsequently, that can be
-passed as a parameter to ServiceAuditor for automatically evaluating the service.
+passed as a parameter to LBSProximityAuditor for automatically evaluating the service.
 For thorough examples on how to implement your own auditing class for your
 service, please see the example_auditor.py file.
 
@@ -40,9 +41,9 @@ service, please see the example_auditor.py file.
 Installation
 ============
 
-The following installation instructions are based on pip package manager but
+The following installation instructions are based onthe pip package manager but
 if you would like to follow a different installation procedure, you can find
-all required packages at requirements.txt
+all the required packages in requirements.txt
 
 Install the dependencies via
 
