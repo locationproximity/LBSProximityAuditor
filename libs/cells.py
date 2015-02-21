@@ -45,8 +45,7 @@ def cut(poly, proj, R, grid):
     @poly: 	polygon to be cut in half (in PROJECTED COORDINATES)
     @proj: 	projection used
     @R: 	radius of circle used for cutting in km
-    @grid_point_dist: the distance of point to be used in the grid
-    @err_adj: account for errors of the projection
+    @grid: the distance of the grid edge
     """
     R = R * 1000
 
