@@ -10,6 +10,9 @@ import random
 from . import projections
 
 def circle(lat, lon, R, proj):
+    """Create a circle of radius R around (lat, lon)
+    in projected coordinates, using projection @proj
+    """
     (x, y) = proj(lon, lat)
     return Point(x, y).buffer(R)
 
@@ -32,7 +35,7 @@ def check_if_in(proj, poly, point, is_latlon = True):
         if not __debug__:
             print "\t\t\tOUT"
             is_in = False
-            return is_in
+    return is_in
 
 def cut(poly, proj, R, grid):
     """Takes a polygon and a radius R and returns the coordinates
@@ -166,7 +169,7 @@ def get_random_points_in_polygon(poly, N):
             p = Point(p_x, p_y)
             points.append((p_x, p_y))
             count += 1
-            return points
+    return points
 
 def poly_centroid(poly, proj):
     """Returns the real centroid coordinates for a given projected polygon
